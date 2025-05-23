@@ -41,8 +41,8 @@ To recreate the development environment, you need the following software and/or 
 I found these websites useful in developing this software:
 
 * Oracle Java Tutorials
-* Baeldung - Java Tutorials
-* GeeksforGeeks Java Tutorials
+* Baeldung - Java Tutorials https://www.baeldung.com/
+* GeeksforGeeks Java Tutorials https://docs.oracle.com/javase/tutorial/
 
 
 ## Future Work
