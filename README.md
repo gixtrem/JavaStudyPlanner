@@ -4,7 +4,7 @@
 Java CLI-Based Student Study Planner
 
 **Project Description**:
-A simple command-line interface application developed in Java to help students manage and organize their study sessions effectively. The software enables users to input, view, and manage their study schedules and offers the ability to export these schedules in CSV format for easy access and sharing.
+A simple command-line interface application developed in Java to help students manage and organize their study sessions effectively. The software enables users to input, view, and manage their study schedules and export them in CSV format for easy access and sharing.
 
 **Project Goals**:
 1. Provide an intuitive and easy-to-use CLI-based interface.
@@ -13,7 +13,7 @@ A simple command-line interface application developed in Java to help students m
 4. Ensure reliable and error-free operation through robust error handling.
 
 ## Instructions for Build and Use
-1. teps to build and/or run the software
+1. Steps to build and/or run the software
 2. Install Java JDK version 17 or newer on your system.
 3. Clone the repository: git clone https://github.com/gixtrem/JavaStudyPlanner.git
 4. Open the project in your chosen IDE (e.g., VS Code, IntelliJ IDEA, Eclipse).
