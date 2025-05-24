@@ -14,68 +14,58 @@ public class Main {
         // Create a dynamic list to store schedule entries.
         List<Schedule> schedules = new ArrayList<>();
 
-        // Scanner instance to capture user input from the command line.
-        Scanner scanner = new Scanner(System.in);
-
         // Display a welcome message when the program starts.
-        System.out.println("\n Welcome to the Student Study Planner ");
-
-        // Boolean variable to control the loop (true means the loop continues).
-        boolean running = true;
-
-        // Main loop that displays menu options and takes user actions repeatedly until exited.
-        while (running) {
-            // Show the command-line menu options clearly to the user.
-            System.out.println("\nPlease choose an option:");
-            System.out.println("1.  Add a Study Schedule");
-            System.out.println("2.  View All Schedules");
-            System.out.println("3.  Export Schedules to CSV");
-            System.out.println("4.  Exit");
-            System.out.print("Your choice: ");
-
-            int choice;
-
-            // Using try-catch block to handle cases where the user input isn't an integer.
-            try {
-                // Reads user input as a String, then converts it to an integer.
-                choice = Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                // If input can't be converted to integer, prompt user to try again.
-                System.out.println(" Invalid input! Please enter a number.");
-                continue; // skips to the next loop iteration
+        try ( // Scanner instance to capture user input from the command line.
+                Scanner scanner = new Scanner(System.in)) {
+            // Display a welcome message when the program starts.
+            System.out.println("\n Welcome to the Student Study Planner ");
+            // Boolean variable to control the loop (true means the loop continues).
+            boolean running = true;
+            // Main loop that displays menu options and takes user actions repeatedly until exited.
+            while (running) {
+                // Show the command-line menu options clearly to the user.
+                System.out.println("\nPlease choose an option:");
+                System.out.println("1.  Add a Study Schedule");
+                System.out.println("2.  View All Schedules");
+                System.out.println("3.  Export Schedules to CSV");
+                System.out.println("4.  Exit");
+                System.out.print("Your choice: ");
+                
+                int choice;
+                
+                // Using try-catch block to handle cases where the user input isn't an integer.
+                try {
+                    // Reads user input as a String, then converts it to an integer.
+                    choice = Integer.parseInt(scanner.nextLine());
+                } catch (NumberFormatException e) {
+                    // If input can't be converted to integer, prompt user to try again.
+                    System.out.println(" Invalid input! Please enter a number.");
+                    continue; // skips to the next loop iteration
+                }
+                
+                // Switch-case statement to perform actions based on user's menu selection.
+                switch (choice) {
+                    case 1 -> // Calls helper method to add a new schedule.
+                        addSchedule(scanner, schedules);
+                        
+                    case 2 -> // Calls helper method to display all stored schedules.
+                        viewSchedules(schedules);
+                        
+                    case 3 -> // Calls the exporter class method to save schedules to a CSV file.
+                        ScheduleExporter.exportToCSV(schedules, "schedules/exported_schedule.csv");
+                        
+                    case 4 -> {
+                        // Set running to false to exit the loop and terminate the program.
+                        running = false;
+                        System.out.println(" Exiting... Good luck studying!");
+                    }
+                        
+                    default -> // Default case handles input that doesn't match any menu options.
+                        System.out.println(" Invalid option. Please choose again.");
+                }
             }
-
-            // Switch-case statement to perform actions based on user's menu selection.
-            switch (choice) {
-                case 1:
-                    // Calls helper method to add a new schedule.
-                    addSchedule(scanner, schedules);
-                    break;
-
-                case 2:
-                    // Calls helper method to display all stored schedules.
-                    viewSchedules(schedules);
-                    break;
-
-                case 3:
-                    // Calls the exporter class method to save schedules to a CSV file.
-                    ScheduleExporter.exportToCSV(schedules, "schedules/exported_schedule.csv");
-                    break;
-
-                case 4:
-                    // Set running to false to exit the loop and terminate the program.
-                    running = false;
-                    System.out.println(" Exiting... Good luck studying!");
-                    break;
-
-                default:
-                    // Default case handles input that doesn't match any menu options.
-                    System.out.println(" Invalid option. Please choose again.");
-            }
+            // Close the Scanner resource to prevent memory leaks.
         }
-
-        // Close the Scanner resource to prevent memory leaks.
-        scanner.close();
     }
 
     /**
