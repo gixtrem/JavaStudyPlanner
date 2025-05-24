@@ -12,10 +12,10 @@ public class ScheduleExporter {
                 writer.append(schedule.toCSVFormat()).append("\n");
             }
 
-            System.out.println("✅ Successfully exported schedules to " + filename);
+            System.out.println(" Successfully exported schedules to " + filename);
 
         } catch (IOException e) {
-            System.err.println("❌ Failed to export schedules: " + e.getMessage());
+            System.err.println(" Failed to export schedules: " + e.getMessage());
         }
     }
 }
