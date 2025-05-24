@@ -18,7 +18,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         // Display a welcome message when the program starts.
-        System.out.println("\n📚 ** Welcome to the Student Study Planner ** 📚");
+        System.out.println("\n Welcome to the Student Study Planner ");
 
         // Boolean variable to control the loop (true means the loop continues).
         boolean running = true;
@@ -27,10 +27,10 @@ public class Main {
         while (running) {
             // Show the command-line menu options clearly to the user.
             System.out.println("\nPlease choose an option:");
-            System.out.println("1. 📝 Add a Study Schedule");
-            System.out.println("2. 📖 View All Schedules");
-            System.out.println("3. 📤 Export Schedules to CSV");
-            System.out.println("4. ❌ Exit");
+            System.out.println("1.  Add a Study Schedule");
+            System.out.println("2.  View All Schedules");
+            System.out.println("3.  Export Schedules to CSV");
+            System.out.println("4.  Exit");
             System.out.print("Your choice: ");
 
             int choice;
@@ -41,7 +41,7 @@ public class Main {
                 choice = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException e) {
                 // If input can't be converted to integer, prompt user to try again.
-                System.out.println("⚠️ Invalid input! Please enter a number.");
+                System.out.println(" Invalid input! Please enter a number.");
                 continue; // skips to the next loop iteration
             }
 
@@ -65,12 +65,12 @@ public class Main {
                 case 4:
                     // Set running to false to exit the loop and terminate the program.
                     running = false;
-                    System.out.println("👋 Exiting... Good luck studying!");
+                    System.out.println(" Exiting... Good luck studying!");
                     break;
 
                 default:
                     // Default case handles input that doesn't match any menu options.
-                    System.out.println("⚠️ Invalid option. Please choose again.");
+                    System.out.println(" Invalid option. Please choose again.");
             }
         }
 
@@ -104,7 +104,7 @@ public class Main {
         schedules.add(new Schedule(subject, date, time, notes));
 
         // Confirm successful addition of the schedule.
-        System.out.println("✅ Schedule successfully added!");
+        System.out.println("Schedule successfully added!");
     }
 
     /**
@@ -113,7 +113,7 @@ public class Main {
      */
     private static void viewSchedules(List<Schedule> schedules) {
         // Display a heading for clarity when schedules are printed.
-        System.out.println("\n📅 ** Your Current Study Schedules ** 📅");
+        System.out.println("\n  Your Current Study Schedules ");
 
         // Check if there are any schedules in the list.
         if (schedules.isEmpty()) {
