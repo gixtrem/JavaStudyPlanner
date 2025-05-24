@@ -1,8 +1,8 @@
 public class Schedule {
-    private String subject;
-    private String date;
-    private String time;
-    private String notes;
+    private final String subject;
+    private final String date;
+    private final String time;
+    private final String notes;
 
     public Schedule(String subject, String date, String time, String notes) {
         this.subject = subject;
