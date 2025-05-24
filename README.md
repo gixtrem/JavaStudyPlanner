@@ -49,6 +49,6 @@ I found these websites useful in developing this software:
 
 The following items I plan to fix, improve, and/or add to this project in the future:
 
-* [ ] 
-* [ ]
-* [ ]
+* Add more functionalities to my code like set timers and reminders 
+* Connect to active database to save user profile and memory.
+  
